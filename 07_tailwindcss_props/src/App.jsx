@@ -1,30 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import heroImg from "./assets/hero.png";
+import "./App.css";
+import Card from "./components/Card";
 function App() {
+  const imageLinks = [
+    "https://images.pexels.com/photos/11476826/pexels-photo-11476826.jpeg",
+    "https://images.pexels.com/photos/37846258/pexels-photo-37846258.jpeg",
+    "https://images.pexels.com/photos/20212351/pexels-photo-20212351.jpeg",
+    "https://images.pexels.com/photos/34629880/pexels-photo-34629880.jpeg"
 
+  ];
+  const headings = [
+    "Baagad Billa", "Scene", "Class Camera Frame", "Sparrow"
+  ];
+  const paras = [
+    "Billa bolta : 'Tung Tung Sahuuur'",
+    "Scene hai bhai sene. Zindgi ho to yesa barna jhaant na ho",
+    "Just another wallpaper with the classic white frame",
+    "Kya sparrow ? Sarey chiyda to tumne maar diye."
+  ]
   return (
     <>
-    <div className='h-120 w-120 bg-blue-200 p-10 rounded-2xl overflow-scroll'>
-      <div className='grid place-self-center'>
-        <img className='h-70 w-60 rounded-2xl'  src="https://images.pexels.com/photos/18598291/pexels-photo-18598291.jpeg" alt="" />
+      <div className="grid grid-cols-3 gap-2">
+        {
+          imageLinks.map((imageLink, i) => (
+            <Card imageLink={imageLink} heading={headings[i]} para={paras[i]} />
+          ))
+        };
       </div>
-      <div>
-        <div className='my-10 p-2'>
-          <p className='text-4xl font-mono text-shadow-orange-500'>Lord Ganesha</p>
-        </div>
-        <div className='p-5 flex justify-center'>
-          <p className='font-mono text-justify' style={{hyphens:'auto'}}>Lord Ganesha, reverently addressed as Ganapati Baba, is one of the most widely worshiped deities in Hinduism. Recognizable by his distinct elephant head and human body, he is revered as the Vighnaharta—the remover of obstacles—and the patron of arts, sciences, intellect, and wisdom. As the lord of beginnings, his invocation traditionally precedes any auspicious endeavor, ritual, or business venture to ensure smooth progress and success.
-              He is the son of Lord Shiva and Goddess Parvati. His unique anatomy holds deep symbolic meaning: the large head signifies immense wisdom and deep thinking, the large ears underscore the importance of listening intently, and the trunk represents adaptability and high discernment. In his hands, he typically holds a noose (to capture difficulties) and an axe (to sever attachments), while his favorite sweet, the modak, symbolizes the ultimate reward of spiritual pursuit.
-              Ganapati Baba’s vehicle is a humble mouse, illustrating humility and the mastery over worldly desires. His worship culminates annually in the vibrant festival of Ganesh Chaturthi, where millions of devotees celebrate his presence with profound devotion, massive processions, and prayers, seeking his blessings for prosperity, clarity of mind, and auspicious new beginnings.</p>
-        </div>
-      </div>
-    </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
