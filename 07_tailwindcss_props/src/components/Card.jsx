@@ -3,10 +3,11 @@ import React from "react";
 function Card({imageLink, heading, para}) {
   return (
     <>
-      <div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs">
+      <div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-2xl shadow-xs">
         <a href="#">
           <img
-            class="rounded-base"
+            h-50 w-50
+            class="rounded-2xl"
             src={imageLink}
             alt=""
           />
